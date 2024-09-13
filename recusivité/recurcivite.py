@@ -57,6 +57,36 @@ def puissance(a:int,b:int,result=1):
 
 #print(puissance(6,10))
 
-#EXERCICE 6
+#Exercice Supplémentaire
 
-#1 
+#EXERCICE 1
+
+def pair(n):
+    if n == 0:
+        return True
+    if n == 1:
+        return False
+    return pair(n-2)
+
+def impair(n):
+    if n == 0:
+        return False
+    if n == 1:
+        return True
+    return impair(n-2)
+
+#print(pair(10))
+#print(impair(10))
+
+#EXERCICE 2
+
+def effectif(T,x,result=0,long=-1):
+    if long==-1:
+        long = len(T)
+    if not(T):
+        return result/long*100
+    if T[0] == x:
+        return effectif(T[1:],x,result+1,long)
+    return effectif(T[1:],x,result,long)
+
+print(effectif([1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10],1)," %")
