@@ -59,6 +59,8 @@ class Complex :
 class Fraction :
 
     def __init__(self,num:int,den:int) -> None:
+        if den==0:
+            raise ValueError("Denominator cannot be zero")
         self.__num = num
         self.__den = den
 
