@@ -113,7 +113,7 @@ class Arbre:
         return tab
 
     def ajoute(self, valeur):
-        if valeur < self.valeur:
+        if valeur <= self.valeur:
             if self.gauche is None:
                 self.gauche = Arbre(valeur,self)
             else:
@@ -161,13 +161,11 @@ class Arbre:
     
     #2 )
     def minimum(self):
-        if self.gauche : return self.gauche.minimum()
-        elif self.droite: return self.droite.minimum()
+        if self.droite: return self.droite.minimum()
         else : return self.valeur
 
     def maximum(self):
         if self.droite : return self.droite.maximum()
-        elif self.gauche: return self.gauche.maximum()
         else : return self.valeur
 
     def successeur(self,prec = None):
@@ -195,16 +193,27 @@ class Arbre:
             return self.valeur
 
 
-a = [17, 25, 11, 13, 23, 5, 8 , 28]
+a = [17, 25, 11, 13, 23, 5, 8 , 28,9]
 arbre = Arbre(a.pop(0))
 for e in a :
     arbre.ajoute(e)
-print(arbre.predecesseur())
+print(arbre)
 
+#Exercice 3 :
+'''
+1)
+prefix : H,R,I,A,K,J,M,S,L,O
+infix : I,R,K,A,H,J,S,M,L,O
+postfix : I,K,A,R,S,O,L,M,J,H
+
+2)
+
+
+'''
 #Exercice 4 : 
 '''
 1)
-oui il est possible car chaque valeur suit le principe d'un arbre binaire
+oui il est possible car chaque valeur suit le principe d'un arbre binaire de recherche
 
 2)
 non car 22 serais mit à droite de 23 donc ce chemin n'est pas valide
