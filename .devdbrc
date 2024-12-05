@@ -1,0 +1,6 @@
+[
+  {
+    "type": "sqlite",
+    "path": "/workspaces/NSI/films.db"
+  }
+]
